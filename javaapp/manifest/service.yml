@@ -1,0 +1,12 @@
+kind: Service
+metadata:
+  name: java-service
+  namespace: default
+spec:
+  selector:
+    app: java
+  ports:
+    - protocol: TCP
+      port: 80          # Service port
+      targetPort: 8080   # Container port
+  type: ClusterIP
