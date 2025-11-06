@@ -36,9 +36,11 @@ jobs:
           terraform_version: 1.9.5 
 
       - name: Terraform Security Scan
-        uses: aquasecurity/tfsec-action@v1
+        uses: aquasecurity/tfsec-action@v1.0.3
         with:
           working-directory: ${{ env.TF_WORKING_DIR }}
+          format: sarif
+          output-file: tfsec-results.sarif
           
       - name: Terraform Format
         id: fmt
